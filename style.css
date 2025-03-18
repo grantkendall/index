@@ -1,0 +1,29 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+div {
+    flex: 1;
+    border: 1px solid black;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+
+.hover {
+    color: white;
+    background-color: black;
+}
+
+p {
+    margin: 0;
+}
