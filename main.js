@@ -1,3 +1,6 @@
+const time = new Date();
+const initialSeconds = time.getSeconds();
+
 const items = document.querySelectorAll("li");
 const right = document.querySelector(".right");
 
@@ -6,7 +9,7 @@ text.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odi
 text.style.display = "none";
 
 const testText = document.createElement("p");
-testText.textContent = "This is a test to determine if hidden elements take up space on the page."
+testText.textContent = "This is a test.";
 
 right.appendChild(text);
 right.appendChild(testText);
@@ -21,4 +24,3 @@ items.forEach(element => {
         text.style.display = "none";
     });
 });
-
