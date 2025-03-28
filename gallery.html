@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .img-full {
+            background-color: rgb(239, 232, 222);
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .img-thumbs {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+        }
+        .thumb {
+            flex: 1;
+            background-color: rgb(239, 232, 222);
+            height: 40px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-full">
+        <img src="" alt="">
+    </div>
+    <div class="img-thumbs">
+        <!-- Size: 20% of img-full, floated left -->
+         <div class="thumb"></div>
+         <div class="thumb"></div>
+         <div class="thumb"></div>
+         <div class="thumb"></div>
+    </div>
+</body>
+
+<script>
+    const imgs = ["01.png", "02.png", "03.png", "04.png", "05.png"];
+    const altText = {};
+    
+    const mainImg = document.querySelector(".img-full");
+    const thumbs = document.querySelector(".img-thumbs");
+    mainImg.addEventListener("click", () => {
+        if (mainImg.style.width !== "200px") {
+            mainImg.style.width = "200px";
+            mainImg.style.height = "200px";
+            thumbs.style.width = "200px";
+        }
+        else {
+            mainImg.style.width = "400px";
+            mainImg.style.height = "400px";
+            thumbs.style.width = "400px";
+            thu
+        }
+    });
+</script>
+</html>
