@@ -5,6 +5,7 @@
         * {
             margin: 0;
             padding: 0;
+            font-family: sans-serif;
         }
         body {
             background-color: black;
@@ -31,39 +32,51 @@
             height: 40px;
             border: 1px solid black;
         }
+        h1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: rgb(239, 232, 222);
+            font-weight: 300;
+        }
     </style>
 </head>
 
 <body>
+    <h1>Image Gallery</h1>
     <div class="img-full">
         <img src="" alt="">
     </div>
     <div class="img-thumbs">
-        <!-- Size: 20% of img-full, floated left -->
-         <div class="thumb"></div>
-         <div class="thumb"></div>
-         <div class="thumb"></div>
-         <div class="thumb"></div>
+
     </div>
 </body>
 
 <script>
+    const mainImg = document.querySelector(".img-full");
+    const thumbs = document.querySelectorAll(".thumb");
+    const thumbsContainer = document.querySelector(".img-thumbs");
+    
     const imgs = ["01.png", "02.png", "03.png", "04.png", "05.png"];
     const altText = {};
-    
-    const mainImg = document.querySelector(".img-full");
-    const thumbs = document.querySelector(".img-thumbs");
+
+    for (let i = 0; i < imgs.length; i++) {
+        // Something like this for assigning alt-text
+        //thumbs[i].textContent = imgs[i];
+        const imgThumb = document.createElement("div");
+        imgThumb.className = "thumb";
+        thumbsContainer.append(imgThumb);
+        
+    };
+
     mainImg.addEventListener("click", () => {
         if (mainImg.style.width !== "200px") {
             mainImg.style.width = "200px";
             mainImg.style.height = "200px";
-            thumbs.style.width = "200px";
         }
         else {
             mainImg.style.width = "400px";
             mainImg.style.height = "400px";
-            thumbs.style.width = "400px";
-            thu
         }
     });
 </script>

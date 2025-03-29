@@ -38,5 +38,20 @@
         </ul>
         <p>Flowers</p>
     </div>
+<script>
+    const body = document.querySelector("body");
+    const flowers = document.querySelectorAll("li");
+    flowers.forEach(flower => {
+        flower.addEventListener("mouseover", () => {
+            console.log(flower.textContent);
+            body.style.backgroundColor = flower.style.color;
+        })
+    });
+    flowers.forEach(flower => {
+        flower.addEventListener("mouseleave", () => {
+            body.style.backgroundColor = "black";
+        })
+    });
+</script>
 </body>
 </html>
