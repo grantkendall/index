@@ -3,12 +3,13 @@
 <head>
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: sans-serif;
         }
         body {
-            background-color: black;
+            background-color: #02474F;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -16,36 +17,36 @@
             align-items: center;
         }
         .img-full {
-            background-color: rgb(239, 232, 222);
-            width: 200px;
-            height: 200px;
-            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
         }
         .img-thumbs {
             display: flex;
             justify-content: space-between;
-            width: 200px;
+            width: 400px;
         }
         .thumb {
             flex: 1;
-            background-color: rgb(239, 232, 222);
-            height: 40px;
-            border: 1px solid black;
+            height: 80px;
+            width: 80px;
+            object-fit: cover;
         }
         h1 {
             position: absolute;
             left: 0;
             top: 0;
-            color: rgb(239, 232, 222);
+            color: #DBF9FF;
+            font-size: 40px;
             font-weight: 300;
         }
     </style>
 </head>
 
 <body>
-    <h1>Image Gallery</h1>
-    <div class="img-full">
-        <img src="" alt="">
+    <h1>Clouds</h1>
+    <div>
+        <img src="" alt="" class="img-full">
     </div>
     <div class="img-thumbs">
 
@@ -57,26 +58,27 @@
     const thumbs = document.querySelectorAll(".thumb");
     const thumbsContainer = document.querySelector(".img-thumbs");
     
-    const imgs = ["01.png", "02.png", "03.png", "04.png", "05.png"];
+    const imgs = ["images/clouds_01.jpg", "images/clouds_02.jpg", "images/clouds_03.jpg", "images/clouds_04.jpg", "images/clouds_05.jpg"];
     const altText = {};
 
+    mainImg.src = imgs[0];
+
     for (let i = 0; i < imgs.length; i++) {
-        // Something like this for assigning alt-text
-        //thumbs[i].textContent = imgs[i];
-        const imgThumb = document.createElement("div");
+        const imgThumb = document.createElement("img");
+        imgThumb.src = imgs[i];
         imgThumb.className = "thumb";
+        imgThumb.addEventListener("click", () => mainImg.src = imgs[i]);
         thumbsContainer.append(imgThumb);
-        
     };
 
     mainImg.addEventListener("click", () => {
-        if (mainImg.style.width !== "200px") {
-            mainImg.style.width = "200px";
-            mainImg.style.height = "200px";
-        }
-        else {
+        if (mainImg.style.width !== "400px") {
             mainImg.style.width = "400px";
             mainImg.style.height = "400px";
+        }
+        else {
+            mainImg.style.width = "600px";
+            mainImg.style.height = "600px";
         }
     });
 </script>
