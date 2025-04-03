@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Dual Layout Test</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            overflow: hidden;
+        }
+        .left,
+        .right {
+            display: flex;
+            width: 50%;
+            height: 100vh;
+            border: 1px solid black;
+            overflow-y: scroll;
+        }
+        p {
+            height: 200vh;
+            font-size: 72px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse dolor, corrupti ab ad ipsum officiis exercitationem non eaque magnam doloribus nisi sit unde autem molestiae iure minima quod magni dolore.</p>
+    </div>
+    <div class="right">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, debitis rerum. Modi exercitationem quasi quam sequi reiciendis eligendi necessitatibus ratione molestiae dolorum sunt recusandae tempora ullam aut, maiores sit iste.</p>
+    </div>
+</body>
+</html>
