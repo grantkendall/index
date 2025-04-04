@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100vh;
+        }
+        .row {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .row div {
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+        }
+        .row div:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div>01</div>
+            <div>02</div>
+            <div>03</div>
+        </div>
+        <div class="row">
+            <div>04</div>
+            <div>05</div>
+            <div>06</div>
+        </div>
+        <div class="row">
+            <div>07</div>
+            <div>08</div>
+            <div>09</div>
+        </div>
+    </div>
+    <script>
+        const body = document.querySelector("body");
+        const boxes = document.querySelectorAll(".row div");
+        
+        boxes.forEach(box => {
+            box.addEventListener("mouseover", () => {
+                const text = document.createElement("p");
+                text.className = "hover-text";
+                text.textContent = "Working Title, 20XX";
+                text.style.fontSize = "72px";
+                text.style.position = "absolute";
+                text.style.top = "0px";
+                body.appendChild(text);
+            });
+            box.addEventListener("mouseout", () => {
+                const text = document.querySelector(".hover-text");
+                body.removeChild(text);
+            });
+        });
+    </script>
+</body>
+</html>
